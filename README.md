@@ -2,37 +2,43 @@
 
 **_Videogames_** es una Base de Datos sencilla que implementa un **CRUD** completo sobre dos colecciones de datos relacionadas, la de videojuegos (**_videoagme_**) y la de desarrolladores (**_developer_**).
 
-Se recomienda el uso de alguna aplicación que permita probar la **API** de la aplicación mediante el envío de peticiones **HTTP** y la recepción de sus correspondientes respuestas, como puede ser **_[Insomnia]_**.
+Se recomienda el uso de alguna aplicación que permita probar la **API** de la aplicación mediante el envío de peticiones **HTTP** y la recepción de sus correspondientes respuestas, como puede ser [Insomnia].
 
 ## Colección _videogame_
 
 A continuación se detallan los datos que almacena un videojuego de la colección **_videogame_**:
 
-| CAMPO             | DESCRIPCIÓN                                 | TIPO        | OBLIGATORIO     | ÚNICO | VALOR                                                                                                                                                                                    |
-| ----------------- | ------------------------------------------- | ----------- | --------------- | ----- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **\__id_**        | Identificador del videojuego                | Hexadecimal | Sí (automático) | Sí    | **Automático**                                                                                                                                                                           |
-| **_title_**       | Título del videojuego                       | Texto       | Sí              | Sí    | Texto libre                                                                                                                                                                              |
-| **_genre_**       | Género del videojuego                       | Lista       | Sí              | No    | _Acción, Arcade, Aventura, Aventura gráfica, Carreras, Deporte, Disparos, Estrategia, Lucha, Mundo abierto, Musical, Plataformas, Puzle, Rol, Sigilo, Simulación, Supervivencia, Terror_ |
-| **_description_** | Descripción del videojuego                  | Texto       | No              | No    | Texto libre                                                                                                                                                                              |
-| **_releaseDate_** | Fecha de lanzamento del videojuego          | Texto       | Sí              | No    | Fecha válida en formato _DD/MM/AAAA_                                                                                                                                                     |
-| **_pegiAge_**     | Etiqueta de edad PEGI del videojuego        | Número      | Sí              | No    | _3, 7, 12, 16, 18_                                                                                                                                                                       |
-| **_pegiContent_** | Descriptor de contenido PEGI del videojuego | Lista       | Sí              | No    | _Discriminación, Drogas, Incluye compras, Juego, Lenguaje soez, Miedo, Sexo, Violencia_                                                                                                  |
-| **_platform_**    | Plataforma del videojuego                   | Lista       | Sí              | No    | _Android / iOS, Nintendo, PC, PlayStation, Xbox_                                                                                                                                         |
-| **_developer_**   | Desarrollador del videojuego                | Texto       | Sí (automático) | No    | **Automático**                                                                                                                                                                           |
+| CAMPO             | DESCRIPCIÓN                                 | TIPO        | OBLIGATORIO | ÚNICO | VALOR                                                                                                                                                                                    |
+| ----------------- | ------------------------------------------- | ----------- | ----------- | ----- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **\__id_**        | Identificador del videojuego                | Hexadecimal | Sí          | Sí    | **Automático**                                                                                                                                                                           |
+| **_title_**       | Título del videojuego                       | Texto       | Sí          | Sí    | Texto libre                                                                                                                                                                              |
+| **_genre_**       | Género del videojuego                       | Lista       | Sí          | No    | _Acción, Arcade, Aventura, Aventura gráfica, Carreras, Deporte, Disparos, Estrategia, Lucha, Mundo abierto, Musical, Plataformas, Puzle, Rol, Sigilo, Simulación, Supervivencia, Terror_ |
+| **_description_** | Descripción del videojuego                  | Texto       | No          | No    | Texto libre                                                                                                                                                                              |
+| **_releaseDate_** | Fecha de lanzamento del videojuego          | Texto       | Sí          | No    | Fecha válida en formato _DD/MM/AAAA_                                                                                                                                                     |
+| **_pegiAge_**     | Etiqueta de edad PEGI del videojuego        | Número      | Sí          | No    | _3, 7, 12, 16, 18_                                                                                                                                                                       |
+| **_pegiContent_** | Descriptor de contenido PEGI del videojuego | Lista       | Sí          | No    | _Discriminación, Drogas, Incluye compras, Juego, Lenguaje soez, Miedo, Sexo, Violencia_                                                                                                  |
+| **_platform_**    | Plataforma del videojuego                   | Lista       | Sí          | No    | _Android / iOS, Nintendo, PC, PlayStation, Xbox_                                                                                                                                         |
+| **_developer_**   | Desarrollador del videojuego                | Texto       | No          | No    | **Automático**                                                                                                                                                                           |
+| **_\_\_v_**       | Versión del videojuego                      | Número      | No          | No    | **Automático** (se incrementa con cada modificación del videojuego)                                                                                                                      |
+| **_createdAt_**   | Fecha de creación del videojuego            | Fecha       | No          | No    | **Automático** (fecha en formato _DD/MM/AAAA HH:MM:SS_)                                                                                                                                  |
+| **_updatedAt_**   | Fecha de modificación del videojuego        | Fecha       | No          | No    | **Automático** (fecha en formato _DD/MM/AAAA HH:MM:SS_)                                                                                                                                  |
 
 ## Colección _developer_
 
 A continuación se detallan los datos que almacena un desarrollador de la colección **_developer_**:
 
-| CAMPO                | DESCRIPCIÓN                        | TIPO        | OBLIGATORIO     | ÚNICO | VALOR                                                                                  |
-| -------------------- | ---------------------------------- | ----------- | --------------- | ----- | -------------------------------------------------------------------------------------- |
-| **\__id_**           | Identificador del desarrollador    | Hexadecimal | Sí (automático) | Sí    | **Automático**                                                                         |
-| **_name_**           | Nombre del desarrollador           | Texto       | Sí              | Sí    | Texto libre                                                                            |
-| **_foundationYear_** | Año de fundación del desarrollador | Texto       | Sí              | No    | Año válido (a partir de 1970) en formato _AAAA_                                        |
-| **_founder_**        | Fundador del desarrollador         | Texto       | No              | No    | Texto libre                                                                            |
-| **_headquarters_**   | Sede central del desarrollador     | Texto       | No              | No    | Texto libre                                                                            |
-| **_website_**        | Sitio web del desarrollador        | Texto       | Sí              | No    | Sitio web válido                                                                       |
-| **_videogames_**     | Videojuegos del desarrollador      | Lista       | No              | Sí    | Identificadores válidos de videojuegos (colección **_videogame_**) separados por comas |
+| CAMPO                | DESCRIPCIÓN                             | TIPO        | OBLIGATORIO | ÚNICO | VALOR                                                                                  |
+| -------------------- | --------------------------------------- | ----------- | ----------- | ----- | -------------------------------------------------------------------------------------- |
+| **\__id_**           | Identificador del desarrollador         | Hexadecimal | Sí          | Sí    | **Automático**                                                                         |
+| **_name_**           | Nombre del desarrollador                | Texto       | Sí          | Sí    | Texto libre                                                                            |
+| **_foundationYear_** | Año de fundación del desarrollador      | Texto       | Sí          | No    | Año válido (a partir de 1970) en formato _AAAA_                                        |
+| **_founder_**        | Fundador del desarrollador              | Texto       | No          | No    | Texto libre                                                                            |
+| **_headquarters_**   | Sede central del desarrollador          | Texto       | No          | No    | Texto libre                                                                            |
+| **_website_**        | Sitio web del desarrollador             | Texto       | Sí          | No    | Sitio web válido                                                                       |
+| **_videogames_**     | Videojuegos del desarrollador           | Lista       | No          | Sí    | Identificadores válidos de videojuegos (colección **_videogame_**) separados por comas |
+| **_\_\_v_**          | Versión del desarrollador               | Número      | No          | No    | **Automático** (se incrementa con cada modificación del desarrollador)                 |
+| **_createdAt_**      | Fecha de creación del desarrollador     | Fecha       | No          | No    | **Automático** (fecha en formato _DD/MM/AAAA HH:MM:SS_)                                |
+| **_updatedAt_**      | Fecha de modificación del desarrollador | Fecha       | No          | No    | **Automático** (fecha en formato _DD/MM/AAAA HH:MM:SS_)                                |
 
 ## Instalación y ejecución de la aplicación
 
