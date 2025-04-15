@@ -39,7 +39,8 @@ const developerSchema = new mongoose.Schema(
       validate: {
         validator: validation.isWebsite,
         message: validation.INVALID_WEBSITE_MSG
-      }
+      },
+      unique: [true, `website: ${validation.UNIQUE_MSG}`]
     },
     videogames: {
       ref: videogameCollectionName,

@@ -34,7 +34,7 @@ A continuación se detallan los datos que almacena un desarrollador de la colecc
 | **_foundationYear_** | Año de fundación del desarrollador      | Texto       | Sí          | No    | Año válido (a partir de 1970) en formato _AAAA_                                        |
 | **_founder_**        | Fundador del desarrollador              | Texto       | No          | No    | Texto libre                                                                            |
 | **_headquarters_**   | Sede central del desarrollador          | Texto       | No          | No    | Texto libre                                                                            |
-| **_website_**        | Sitio web del desarrollador             | Texto       | Sí          | No    | Sitio web válido                                                                       |
+| **_website_**        | Sitio web del desarrollador             | Texto       | Sí          | Sí    | Sitio web válido                                                                       |
 | **_videogames_**     | Videojuegos del desarrollador           | Lista       | No          | Sí    | Identificadores válidos de videojuegos (colección **_videogame_**) separados por comas |
 | **_\_\_v_**          | Versión del desarrollador               | Número      | No          | No    | **Automático** (se incrementa con cada modificación del desarrollador)                 |
 | **_createdAt_**      | Fecha de creación del desarrollador     | Fecha       | No          | No    | **Automático** (fecha en formato _DD/MM/AAAA HH:MM:SS_)                                |
