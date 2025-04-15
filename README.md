@@ -1,6 +1,6 @@
 # Videogames
 
-**_Videogames_** es una Base de Datos sencilla que implementa un **CRUD** completo sobre dos colecciones de datos relacionadas, la de videojuegos (**_videoagme_**) y la de desarrolladores (**_developer_**).
+**_Videogames_** es una Base de Datos sencilla que implementa un **CRUD** completo sobre dos colecciones de datos relacionadas, la de videojuegos (**_videogame_**) y la de desarrolladores (**_developer_**).
 
 Se recomienda el uso de alguna aplicación que permita probar la **API** de la aplicación mediante el envío de peticiones **HTTP** y la recepción de sus correspondientes respuestas, como puede ser [Insomnia].
 
