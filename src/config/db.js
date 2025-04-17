@@ -1,6 +1,6 @@
 /* Funcionalidades para la configuración de la Base de Datos */
 
-const { validation } = require('../../src/utils/validations/validation')
+const { validation } = require('../utils/validations/validation')
 
 // Realiza la conexión con la Base de Datos "videogames"
 const connectToDataBase = async () => {

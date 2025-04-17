@@ -153,7 +153,7 @@ module.exports = { videogameSchema }
 const {
   preValidateVideogame,
   postValidateVideogame
-} = require('../../utils/middlewares/videogame')
+} = require('../../middlewares/videogame')
 preValidateVideogame
 postValidateVideogame
 

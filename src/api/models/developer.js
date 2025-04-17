@@ -108,7 +108,7 @@ module.exports = { developerSchema }
 const {
   preValidateDeveloper,
   postValidateDeveloper
-} = require('../../utils/middlewares/developer')
+} = require('../../middlewares/developer')
 preValidateDeveloper
 postValidateDeveloper
 

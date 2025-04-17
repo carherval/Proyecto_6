@@ -1,7 +1,7 @@
 /* Middlewares de desarrolladores */
 
-const { developerSchema } = require('../../api/models/developer')
-const { validation } = require('../validations/validation')
+const { developerSchema } = require('../api/models/developer')
+const { validation } = require('../utils/validations/validation')
 
 // Transformación de los datos de los desarrolladores antes de su validación
 const preValidateDeveloper = developerSchema.pre('validate', function (next) {

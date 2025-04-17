@@ -1,7 +1,7 @@
 /* Middlewares de videojuegos */
 
-const { videogameSchema } = require('../../api/models/videogame')
-const { validation } = require('../validations/validation')
+const { videogameSchema } = require('../api/models/videogame')
+const { validation } = require('../utils/validations/validation')
 
 // Transformación de los datos de los videojuegos antes de su validación
 const preValidateVideogame = videogameSchema.pre('validate', function (next) {
