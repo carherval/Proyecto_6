@@ -9,8 +9,8 @@ const COMMA_SEPARATED_ALLOWED_VALUES_MSG =
   'Valores válidos (separados por comas)'
 const DATE_FORMAT_MSG = 'Formato correcto: dd/mm/yyyy'
 const YEAR_FORMAT_MSG = 'Formato correcto: yyyy'
-const INVALID_DATE_MSG = 'Fecha no válida'
 const INVALID_YEAR_MSG = `El año debe ser a partir de ${MIN_YEAR}`
+const INVALID_DATE_MSG = 'Fecha no válida'
 const INVALID_NUMBER_MSG = 'Número no válido'
 const INVALID_WEBSITE_MSG = 'Website no válido'
 const INVALID_ID_MSG = 'Identificador no válido'
@@ -40,6 +40,18 @@ const isYear = (year) => {
   return /^\d{4}$/.test(year)
 }
 
+// Devuelve si un año es válido
+const isValidYear = (year) => {
+  return year >= MIN_YEAR
+}
+
+// Devuelve si el año de una fecha es válido
+const isValidDateYear = (date) => {
+  const [day, month, year] = date.split('/').map((value) => parseInt(value, 10))
+
+  return isValidYear(year)
+}
+
 // Devuelve si un año es bisiesto
 const isLeapYear = (year) => {
   return !isYear(year)
@@ -62,11 +74,6 @@ const isValidDate = (date) => {
     : day === 31 && [1, 3, 5, 7, 8, 10, 12].includes(month)
     ? true
     : false
-}
-
-// Devuelve si un año es válido
-const isValidYear = (year) => {
-  return year >= MIN_YEAR
 }
 
 // Devuelve si un valor es numérico
@@ -147,8 +154,8 @@ const validation = {
   COMMA_SEPARATED_ALLOWED_VALUES_MSG,
   DATE_FORMAT_MSG,
   YEAR_FORMAT_MSG,
-  INVALID_DATE_MSG,
   INVALID_YEAR_MSG,
+  INVALID_DATE_MSG,
   INVALID_NUMBER_MSG,
   INVALID_WEBSITE_MSG,
   INVALID_ID_MSG,
@@ -159,9 +166,10 @@ const validation = {
   isNotEmptyArray,
   isFormattedDate,
   isYear,
+  isValidYear,
+  isValidDateYear,
   isLeapYear,
   isValidDate,
-  isValidYear,
   isNumber,
   isWebsite,
   getObjectValues,

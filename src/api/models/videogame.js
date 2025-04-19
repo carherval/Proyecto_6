@@ -91,6 +91,10 @@ const videogameSchema = new mongoose.Schema(
           message: validation.DATE_FORMAT_MSG
         },
         {
+          validator: validation.isValidDateYear,
+          message: validation.INVALID_YEAR_MSG
+        },
+        {
           validator: validation.isValidDate,
           message: validation.INVALID_DATE_MSG
         }
