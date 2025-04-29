@@ -158,7 +158,7 @@ const getDeveloperByVideogameId = async (req, res, next) => {
 // Devuelve los desarrolladores filtrados por título de videojuego y ordenados alfabéticamente por nombre
 // Se pueblan los videojuegos con su título y ordenados alfabéticamente por título
 const getDevelopersByVideogameTitle = async (req, res, next) => {
-  const title = req.params.title
+  const title = validation.normalizeString(req.params.title)
 
   try {
     const developers = (
